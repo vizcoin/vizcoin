@@ -466,7 +466,7 @@ vector<unsigned char> ParseHex(const string& str)
 
 static void InterpretNegativeSetting(string name, map<string, string>& mapSettingsRet)
 {
-    // interpret -noBAR as -BAR=0 (and -noBAR=0 as -BAR=1) as long as -BAR not set
+    // interpret -noVIZ as -VIZ=0 (and -noVIZ=0 as -VIZ=1) as long as -VIZ not set
     if (name.find("-no") == 0)
     {
         std::string positive("-");
@@ -510,7 +510,7 @@ void ParseParameters(int argc, const char* const argv[])
     {
         string name = entry.first;
 
-        //  interpret --BAR as -BAR (as long as both are not set)
+        //  interpret --VIZ as -VIZ (as long as both are not set)
         if (name.find("--") == 0)
         {
             std::string singleDash(name.begin()+1, name.end());
@@ -519,7 +519,7 @@ void ParseParameters(int argc, const char* const argv[])
             name = singleDash;
         }
 
-        // interpret -noBAR as -BAR=0 (and -noBAR=0 as -BAR=1) as long as -BAR not set
+        // interpret -noVIZ as -VIZ=0 (and -noVIZ=0 as -VIZ=1) as long as -VIZ not set
         InterpretNegativeSetting(name, mapArgs);
     }
 }
@@ -1057,7 +1057,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
         if (mapSettingsRet.count(strKey) == 0)
         {
             mapSettingsRet[strKey] = it->value[0];
-            // interpret noBAR=1 as BAR=0 (and noBAR=0 as BAR=1) as long as BAR not set)
+            // interpret noVIZ=1 as VIZ=0 (and noVIZ=0 as VIZ=1) as long as VIZ not set)
             InterpretNegativeSetting(strKey, mapSettingsRet);
         }
         mapMultiSettingsRet[strKey].push_back(it->value[0]);

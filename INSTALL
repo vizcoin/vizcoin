@@ -1,9 +1,9 @@
-Building FooCoin
+Building VizCoin
 
-See doc/readme-qt.rst for instructions on building foocoin-qt,
+See doc/readme-qt.rst for instructions on building VizCoin-Qt,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of FooCoin.
+implementation of VizCoin.
 
-See doc/build-*.txt for instructions on building foocoin,
+See doc/build-*.txt for instructions on building vizcoind,
 the intended-for-services, no-graphical-interface, reference
-implementation of FooCoin.
+implementation of VizCoin.

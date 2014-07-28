@@ -1,3 +1,3 @@
-FooCoin (FOO)
+Vizcoin (VIZ)
 
 Blah, blah, blah.
